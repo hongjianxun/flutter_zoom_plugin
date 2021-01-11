@@ -63,6 +63,9 @@ public class ZoomView  implements PlatformView,
             case "meeting_status":
                 meetingStatus(result);
                 break;
+            case "return_to_meeting":
+                returnToMeeting(methodCall, result);
+                break;
             default:
                 result.notImplemented();
         }
@@ -145,6 +148,14 @@ public class ZoomView  implements PlatformView,
         meetingService.joinMeetingWithParams(context, params, opts);
 
         result.success(true);
+    }
+
+    private void returnToMeeting(MethodCall methodCall, MethodChannel.Result result) {
+        ZoomSDK zoomSDK = ZoomSDK.getInstance();
+
+        final MeetingService meetingService = zoomSDK.getMeetingService();
+        
+        meetingService.returnToMeeting(context);
     }
 
     private void startMeeting(MethodCall methodCall, MethodChannel.Result result) {

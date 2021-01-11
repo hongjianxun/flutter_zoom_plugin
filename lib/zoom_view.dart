@@ -117,6 +117,10 @@ class ZoomViewController {
     return _methodChannel.invokeMethod('meeting_status', optionMap);
   }
 
+  Future<List> returnToMeeting() async {
+    return _methodChannel.invokeMethod('return_to_meeting');
+  }
+
   Stream<dynamic> get zoomStatusEvents {
     return _zoomStatusEventChannel.receiveBroadcastStream();
   }
