@@ -1,33 +1,30 @@
-
 class ZoomOptions {
-
   String domain;
   String appKey;
   String appSecret;
-  String jwtToken;
+  String? jwtToken;
 
   ZoomOptions({
-    this.domain,
-    this.appKey,
-    this.appSecret,
-    this.jwtToken
+    required this.domain,
+    required this.appKey,
+    required this.appSecret,
+    this.jwtToken,
   });
 }
 
 class ZoomMeetingOptions {
-
-  String userId;
-  String displayName;
-  String meetingId;
-  String meetingPassword;
-  String zoomToken;
-  String zoomAccessToken;
-  String disableDialIn;
-  String disableDrive;
-  String disableInvite;
-  String disableShare;
-  String noDisconnectAudio;
-  String noAudio;
+  String? userId;
+  String? displayName;
+  String? meetingId;
+  String? meetingPassword;
+  String? zoomToken;
+  String? zoomAccessToken;
+  String? disableDialIn;
+  String? disableDrive;
+  String? disableInvite;
+  String? disableShare;
+  String? noDisconnectAudio;
+  String? noAudio;
 
   ZoomMeetingOptions({
     this.userId,
@@ -41,6 +38,6 @@ class ZoomMeetingOptions {
     this.disableInvite,
     this.disableShare,
     this.noDisconnectAudio,
-    this.noAudio
+    this.noAudio,
   });
 }
